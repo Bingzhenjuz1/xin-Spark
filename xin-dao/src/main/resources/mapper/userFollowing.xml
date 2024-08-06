@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xin.spark.dao.UserFollowingDao">
+    <delete id="delete">
+        delete from
+            t_user_following
+        where
+            userId = #{userId}
+        and
+            followingId = #{followingId}
+    </delete>
+
+    <insert id="addUserFollowing" parameterType="com.xin.spark.domain.UserFollowing">
+        insert into
+            t_user_following(userId, followingId, groupId, createTime)
+        values
+            (#{userId}, #{followingId}, #{groupId}, #{createTime})
+    </insert>
+    
+    <select id="getUserFollowings" parameterType="java.lang.Long" resultType="com.xin.spark.domain.UserFollowing">
+        select
+            *
+        from
+            t_user_following
+        where
+            userId = #{userId}
+    </select>
+</mapper>

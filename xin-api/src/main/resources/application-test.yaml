@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/xin-spark
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver # cj 8往上是需要用cj的这个驱动来连接
